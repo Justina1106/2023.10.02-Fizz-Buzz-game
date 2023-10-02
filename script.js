@@ -19,11 +19,6 @@
 // 13
 // 14
 // FizzBuzz
-// 16
-// 17
-// Fizz
-// 19
-// Buzz
 
 // 5. Skaičiai, kurie dalinasi iš 7, turi būti pakeisti į žodį „Biff".
 // 5.1. Skaičiai, kurie dalinasi iš 7 ir 3 turi būti pakeisti į žodį „FizzBiff";
@@ -38,7 +33,19 @@
 function FizzBuzz() {
     let result = [];
     for (let i = 1; i <= 100; i++) {
-        if (i % 7 === 0) {
+        if (i % 7 === 0 && i % 5 === 0 && i % 3 === 0) {
+            result.push("FizzBuzzBiff");
+        }
+        else if (i % 3 === 0) {
+            result.push("Fizz");
+        }
+        else if (i % 5 === 0) {
+            result.push("Buzz");
+        }
+        else if (i % 3 === 0 && i % 5 === 0) {
+            result.push("FizzBuzz");
+        }
+        else if (i % 7 === 0) {
             result.push("Biff");
         }
         else if (i % 3 === 0 && i % 7 === 0) {
@@ -46,9 +53,6 @@ function FizzBuzz() {
         }
         else if (i % 5 === 0 && i % 7 === 0) {
             result.push("BuzzBiff");
-        }
-        else if (i % 3 === 0 && i % 5 === 0 && i % 7 === 0) {
-            result.push("FizzBuzzBiff");
         }
         else if (i % 9 === 0) {
             result.push("Fuzz");
@@ -64,7 +68,7 @@ function FizzBuzz() {
 }
  
 
-let n = 20;
+let n = 100;
  
 
 let result = FizzBuzz(n);
